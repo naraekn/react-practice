@@ -1,24 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
-import axios from 'axios';
+import useAxios from '../hooks/useAxios';
 
 export default function RestarauntsPage() {
-  const [regions, setRegions] = useState([]);
+  const { loading, data } = useAxios({
+    url: 'https://eatgo-customer-api.ahastudio.com/regions',
+  });
 
-  async function fetchRegions() {
-    try {
-      const request = await axios
-        .get('https://eatgo-customer-api.ahastudio.com/regions');
+  const regions = data?.data;
 
-      setRegions(request.data);
-    } catch(error) {
-      console.log(error);
-    }
+  if(loading) {
+    return (
+      <div>loading</div>
+    );
   }
-
-  useEffect(() => {
-    fetchRegions();
-  }, []);
 
   return (
     <ul>
