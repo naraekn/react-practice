@@ -4,9 +4,13 @@ import { Link } from 'react-router-dom';
 
 export default function HomePage() {
   return (
-    <div>
-      <Link to="/posts">포스트 리스트 보기</Link>
-      <Link to="/posts">포스트 리스트 보기</Link>
-    </div>
+    <ul>
+      <li>
+        <Link to="/posts">Posts</Link>
+      </li>
+      <li>
+        <Link to="/search">Search</Link>
+      </li>
+    </ul>
   );
 }
