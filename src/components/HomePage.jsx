@@ -11,6 +11,9 @@ export default function HomePage() {
       <li>
         <Link to="/search">Search</Link>
       </li>
+      <li>
+        <Link to="/movies">Movies</Link>
+      </li>
     </ul>
   );
 }
