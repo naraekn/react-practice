@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import axios from 'axios';
+
 export default function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -7,16 +9,12 @@ export default function LoginPage() {
 
   async function postLogin({ email, password }) {
     const url = 'https://eatgo-login-api.ahastudio.com/session';
-  
-    const response = await fetch(url, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ email, password }),
+
+    const response = await axios.post(url, {
+      email, password
     });
 
-    setSuccess(response.ok);
+    setSuccess(response.status);
   }
 
   function handleChangeEmail(event) {
