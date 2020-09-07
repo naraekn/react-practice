@@ -14,6 +14,9 @@ export default function HomePage() {
       <li>
         <Link to="/movies">Movies</Link>
       </li>
+      <li>
+        <Link to="/restaurants">Restaurants</Link>
+      </li>
     </ul>
   );
 }
