@@ -5,15 +5,18 @@ import axios from 'axios';
 export default function PostsPage() {
   const [posts, setPosts] = useState([]);
 
+  async function fetchPosts() {
+    try{
+      const result = await axios.get('https://jsonplaceholder.typicode.com/posts');
+
+      setPosts(result.data);
+    } catch(e) {
+      console.log(e);
+    }
+  }
+
   useEffect(() => {
-    axios.get('https://jsonplaceholder.typicode.com/posts')
-      .then((result) => {
-        console.log(result);
-        setPosts(result.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    fetchPosts();
   }, []);
   console.log(posts);
 

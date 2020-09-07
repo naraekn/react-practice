@@ -6,17 +6,22 @@ export default function SearchPage() {
   const [post, setPost] = useState({});
   const [id, setId] = useState(1);
 
-  useEffect(() => {
-    axios
-      .get(`https://jsonplaceholder.typicode.com/posts/${id}`)
-      .then((result) => {
-        setPost(result.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      })
-  }, [id]);
+  // TODO: Seperate api functions with react redux
+  async function fetchPost(id) {
+    try {
+      const result = await axios.get(
+        `https://jsonplaceholder.typicode.com/posts/${id}`
+      );
+      setPost(result.data);
+    } catch(e) {
+      console.log(e);
+    }
+  }
 
+  useEffect(() => {
+    fetchPost(id);
+  }, [id]);
+  
   return (
     <div>
       <input 
