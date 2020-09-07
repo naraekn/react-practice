@@ -17,6 +17,9 @@ export default function HomePage() {
       <li>
         <Link to="/restaurants">Restaurants</Link>
       </li>
+      <li>
+        <Link to="/login">Login</Link>
+      </li>
     </ul>
   );
 }

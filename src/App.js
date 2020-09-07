@@ -7,6 +7,7 @@ import PostsPage from './components/PostsPage';
 import SearchPage from './components/SearchPage';
 import MoviesPage from './components/MoviesPage';
 import RestaurantsPage from './components/RestaurantsPage';
+import LoginPage from './components/LoginPage';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/search" component={SearchPage}/>
         <Route path="/movies" component={MoviesPage}/>
         <Route path="/restaurants" component={RestaurantsPage}/>
+        <Route path="/login" component={LoginPage}/>
       </Switch>
     </BrowserRouter>
   );
