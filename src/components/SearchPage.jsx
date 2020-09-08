@@ -24,6 +24,7 @@ export default function SearchPage() {
   
   return (
     <div>
+      <div>Search</div>
       <input 
         type="text" 
         value={id} 

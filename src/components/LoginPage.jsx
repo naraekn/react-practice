@@ -34,7 +34,8 @@ export default function LoginPage() {
   }
 
   return (
-    <div>
+    <>
+      <div>Login</div>
       <input
         type="email"
         placeholder="email"
@@ -58,6 +59,6 @@ export default function LoginPage() {
           <div>Login Success</div>
         ) 
       }
-    </div>
+    </>
   );
 }

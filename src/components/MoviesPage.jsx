@@ -10,7 +10,8 @@ export default function MoviesPage() {
   const movies = data?.data?.data?.movies;
 
   return (
-    <div>
+    <>
+      <div>Movies</div>
       <h1>{data && data.status}</h1>
       <h2>{loading ? "Loading" : "Success"}</h2>
       <button onClick={refetch}>Refetch</button>
@@ -21,6 +22,6 @@ export default function MoviesPage() {
           ))
         }
       </ul>
-    </div>
+    </>
   );
 }

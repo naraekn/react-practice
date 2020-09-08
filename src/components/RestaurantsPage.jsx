@@ -16,12 +16,15 @@ export default function RestarauntsPage() {
   }
 
   return (
-    <ul>
+    <>
+      <div>Restaurants</div>
+      <ul>
       {
         regions && regions.map((region) => (
           <li key={region.id}>{region.name}</li>
         ))
       }
     </ul>
+    </>
   );
 }

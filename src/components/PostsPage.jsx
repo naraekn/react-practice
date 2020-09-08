@@ -22,6 +22,7 @@ export default function PostsPage() {
 
   return (
     <>
+      <div>Posts</div>
       <ul>
         {
           posts.map((post) => (
